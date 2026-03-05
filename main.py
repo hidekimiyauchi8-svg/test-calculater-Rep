@@ -1,16 +1,20 @@
 def add(x, y):
     return x + y
 
+
 def subtract(x, y):
     return x - y
 
+
 def multiply(x, y):
     return x * y
+
 
 def divide(x, y):
     if y == 0:
         return "Error! Division by zero."
     return x / y
+
 
 def main():
     print("--- Simple Python Calculator ---")
@@ -23,11 +27,11 @@ def main():
     while True:
         choice = input("\nEnter choice (1/2/3/4) or 'q' to quit: ")
 
-        if choice.lower() == 'q':
+        if choice.lower() == "q":
             print("Exiting...")
             break
 
-        if choice in ('1', '2', '3', '4'):
+        if choice in ("1", "2", "3", "4"):
             try:
                 num1 = float(input("Enter first number: "))
                 num2 = float(input("Enter second number: "))
@@ -35,20 +39,21 @@ def main():
                 print("Invalid input. Please enter numeric values.")
                 continue
 
-            if choice == '1':
+            if choice == "1":
                 print(f"{num1} + {num2} = {add(num1, num2)}")
-            elif choice == '2':
+            elif choice == "2":
                 print(f"{num1} - {num2} = {subtract(num1, num2)}")
-            elif choice == '3':
+            elif choice == "3":
                 print(f"{num1} * {num2} = {multiply(num1, num2)}")
-            elif choice == '4':
+            elif choice == "4":
                 result = divide(num1, num2)
                 if isinstance(result, str):
                     print(result)
                 else:
                     print(f"{num1} / {num2} = {result}")
         else:
-            print("Invalid Input")
+            print("ERROR: Invalid Input")
+
 
 if __name__ == "__main__":
     main()
